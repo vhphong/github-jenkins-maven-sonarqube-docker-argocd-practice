@@ -16,8 +16,8 @@ pipeline {
             steps {
 //                 bat 'dir -ltr'
                 // build the project and create a JAR file
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'github_credentials', url: 'https://github.com/vhphong/github-jenkins-maven-sonarqube-docker-argocd-practice']])
-                bat 'mvn clean install'
+//                 checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'github_credentials', url: 'https://github.com/vhphong/github-jenkins-maven-sonarqube-docker-argocd-practice']])
+                bat 'mvn clean package'
             }
         }
 
