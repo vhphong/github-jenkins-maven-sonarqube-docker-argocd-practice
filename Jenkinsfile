@@ -24,7 +24,7 @@ pipeline {
             }
         }
 
-        stage('Static Code Analysis') {
+        stage('SonarQube Analysis') {
             environment {
                 SONAR_URL = 'http://localhost:9000'
             }
