@@ -3,9 +3,9 @@ pipeline {
     tools {
         maven 'maven_3_8_8'
     }
-    triggers {
-        pollSCM '* * * * *'
-    }
+//     triggers {
+//         pollSCM '* * * * *'
+//     }
 
     stages {
         stage('Checkout') {
