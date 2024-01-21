@@ -16,7 +16,7 @@ pipeline {
             steps {
                 bat 'dir -ltr'
                 // build the project and create a JAR file
-                bat 'cd ../jenkins-maven-sonarqube-docker/ && mvn clean package'
+                bat 'mvn clean package'
             }
         }
 
