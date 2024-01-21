@@ -55,6 +55,7 @@
                 </configuration>
             </plugin>
         </plugins>
+        <finalName>github-jenkins-maven-sonarqube-docker-argocd</finalName>
     </build>
 
 </project>
