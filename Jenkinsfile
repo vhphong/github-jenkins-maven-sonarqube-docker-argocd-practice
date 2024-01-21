@@ -3,6 +3,7 @@ pipeline {
     tools {
         maven 'maven_3_8_8'
     }
+
     stages {
         stage('Checkout') {
             steps {
@@ -10,6 +11,15 @@ pipeline {
                 bat 'mvn clean install'
             }
         }
+
+        stage('Build and Test') {
+            steps {
+                sh 'ls -ltr'
+                // build the project and create a JAR file
+                sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean package'
+            }
+        }
+
         stage('Build Docker image') {
             steps {
                 script {
@@ -17,6 +27,7 @@ pipeline {
                 }
             }
         }
+
         stage('Push image to DockerHub') {
             steps {
                 script {
